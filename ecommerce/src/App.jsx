@@ -20,7 +20,26 @@ import menuIcon from './assets/icon-menu.svg'
 
 import './App.css'
 
+const productMainImages = [
+    productMainImg1,
+    productMainImg2,
+    productMainImg3,
+    productMainImg4,
+]
+
+const productThumbnails = [
+    productThumbnail1,
+    productThumbnail2,
+    productThumbnail3,
+    productThumbnail4,
+]
+
 export default function App() {
+    const [mainImgIndex, setMainImgIndex] = useState(0)
+    const [itemQuantity, setitemQuantity] = useState(0)
+    const [cartItemQuantity, setCartItemQuantity] = useState(0)
+    const [showCart, setShowCart] = useState(false)
+
     return (
         <div className="container">
             <header>
@@ -41,28 +60,88 @@ export default function App() {
                         </ul>
                     </span>
                     <span className="header-cart-avatar">
-                        <span className="cart-num-items">3</span>
-                        <img className="header-cart" src={cart} alt="cart" />
+                        <span className="cart-num-items">
+                            {cartItemQuantity}
+                        </span>
+                        <img
+                            className="header-cart"
+                            src={cart}
+                            alt="cart"
+                            onClick={() => setShowCart(!showCart)}
+                        />
                         <img
                             className="header-avatar"
                             src={avatar}
                             alt="avatar"
                         />
                     </span>
+                    {showCart && (
+                        <div className="cart-state">
+                            <h3>Cart</h3>
+                            {cartItemQuantity === 0 && (
+                                <div>Your cart is empty.</div>
+                            )}
+                            {cartItemQuantity > 0 && (
+                                <div>
+                                    <div className="cart-state-info">
+                                        <span className="cart-state-img">
+                                            <img
+                                                src={
+                                                    productThumbnails[
+                                                        mainImgIndex
+                                                    ]
+                                                }
+                                                alt="sneakers"
+                                            />
+                                        </span>
+                                        <span>
+                                            <p>Fall Limited Edition Sneakers</p>
+                                            <p>
+                                                $125.00 x {cartItemQuantity} $
+                                                {125.0 * cartItemQuantity}.00
+                                            </p>
+                                        </span>
+                                        <span>
+                                            <img
+                                                src={deleteIcon}
+                                                alt="delete"
+                                            />
+                                        </span>
+                                    </div>
+                                    <button>Checkout</button>
+                                </div>
+                            )}
+                        </div>
+                    )}
                 </div>
             </header>
             <main>
                 <div className="product">
                     <section className="product-images">
                         <div className="product-main-img">
-                            <img src={productMainImg1} alt="sneakers" />
+                            <img
+                                src={productMainImages[mainImgIndex]}
+                                alt="sneakers"
+                            />
                         </div>
 
                         <div className="product-thumbnails">
-                            <img src={productThumbnail1} alt="sneakers" />
-                            <img src={productThumbnail2} alt="sneakers" />
-                            <img src={productThumbnail3} alt="sneakers" />
-                            <img src={productThumbnail4} alt="sneakers" />
+                            {productThumbnails.map((img, index) => (
+                                <div
+                                    key={index}
+                                    className={`img-wrapper ${
+                                        index === mainImgIndex
+                                            ? 'selected-img'
+                                            : ''
+                                    }`}
+                                >
+                                    <img
+                                        src={img}
+                                        alt="sneakers"
+                                        onClick={() => setMainImgIndex(index)}
+                                    />
+                                </div>
+                            ))}
                         </div>
                     </section>
                     <section className="product-info">
@@ -87,15 +166,30 @@ export default function App() {
                         </div>
                         <div className="product-cart">
                             <span className="product-cart-quantity">
-                                <span>
+                                <span
+                                    onClick={() => {
+                                        if (itemQuantity > 0)
+                                            setitemQuantity(itemQuantity - 1)
+                                    }}
+                                >
                                     <img src={minusIcon} alt="minus" />
                                 </span>
-                                <span>0</span>
-                                <span>
+                                <span>{itemQuantity}</span>
+                                <span
+                                    onClick={() => {
+                                        setitemQuantity(itemQuantity + 1)
+                                    }}
+                                >
                                     <img src={plusIcon} alt="plus" />
                                 </span>
                             </span>
-                            <button>
+                            <button
+                                onClick={() => {
+                                    setCartItemQuantity(
+                                        cartItemQuantity + itemQuantity
+                                    )
+                                }}
+                            >
                                 <img
                                     src={cart}
                                     alt="cart"

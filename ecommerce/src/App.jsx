@@ -19,6 +19,7 @@ import previousIcon from './assets/icon-previous.svg'
 import menuIcon from './assets/icon-menu.svg'
 
 import './App.css'
+import Lightbox from './components/Lightbox'
 
 const productMainImages = [
     productMainImg1,
@@ -39,6 +40,7 @@ export default function App() {
     const [itemQuantity, setitemQuantity] = useState(0)
     const [cartItemQuantity, setCartItemQuantity] = useState(0)
     const [showCart, setShowCart] = useState(false)
+    const [showLightBox, setShowLightBox] = useState(false)
 
     return (
         <div className="container">
@@ -60,9 +62,11 @@ export default function App() {
                         </ul>
                     </span>
                     <span className="header-cart-avatar">
-                        <span className="cart-num-items">
-                            {cartItemQuantity}
-                        </span>
+                        {cartItemQuantity !== 0 && (
+                            <span className="cart-num-items">
+                                {cartItemQuantity}
+                            </span>
+                        )}
                         <img
                             className="header-cart"
                             src={cart}
@@ -78,8 +82,11 @@ export default function App() {
                     {showCart && (
                         <div className="cart-state">
                             <h3>Cart</h3>
+                            <div></div>
                             {cartItemQuantity === 0 && (
-                                <div>Your cart is empty.</div>
+                                <div className="cart-state-empty">
+                                    Your cart is empty.
+                                </div>
                             )}
                             {cartItemQuantity > 0 && (
                                 <div>
@@ -97,11 +104,21 @@ export default function App() {
                                         <span>
                                             <p>Fall Limited Edition Sneakers</p>
                                             <p>
-                                                $125.00 x {cartItemQuantity} $
-                                                {125.0 * cartItemQuantity}.00
+                                                <span>
+                                                    $125.00 x {cartItemQuantity}
+                                                </span>
+                                                <span className="total-price">
+                                                    ${125.0 * cartItemQuantity}
+                                                    .00
+                                                </span>
                                             </p>
                                         </span>
-                                        <span>
+                                        <span
+                                            className="cart-state-delete"
+                                            onClick={() =>
+                                                setCartItemQuantity(0)
+                                            }
+                                        >
                                             <img
                                                 src={deleteIcon}
                                                 alt="delete"
@@ -118,7 +135,10 @@ export default function App() {
             <main>
                 <div className="product">
                     <section className="product-images">
-                        <div className="product-main-img">
+                        <div
+                            className="product-main-img"
+                            onClick={() => setShowLightBox(true)}
+                        >
                             <img
                                 src={productMainImages[mainImgIndex]}
                                 alt="sneakers"
@@ -156,10 +176,15 @@ export default function App() {
                             </p>
                         </div>
                         <div className="product-price">
-                            <span className="product-price-current">
-                                $125.00
-                            </span>
-                            <span className="product-price-discount">50%</span>
+                            <div>
+                                <span className="product-price-current">
+                                    $125.00
+                                </span>
+                                <span className="product-price-discount">
+                                    50%
+                                </span>
+                            </div>
+
                             <span className="product-price-previous">
                                 $250.00
                             </span>
@@ -201,6 +226,14 @@ export default function App() {
                     </section>
                 </div>
             </main>
+            {showLightBox && (
+                <Lightbox
+                    productMainImages={productMainImages}
+                    productThumbnails={productThumbnails}
+                    mainImgIndex={mainImgIndex}
+                    setShowLightBox={setShowLightBox}
+                />
+            )}
         </div>
     )
 }

@@ -2,14 +2,14 @@ import closeIcon from '../assets/icon-close.svg'
 import nextIcon from '../assets/icon-next.svg'
 import previousIcon from '../assets/icon-previous.svg'
 
-import { useState } from 'react'
-
-export default function Lightbox({
+import {
     productMainImages,
     productThumbnails,
-    mainImgIndex,
-    setShowLightBox,
-}) {
+} from '../assets/assets-product-images'
+
+import { useState } from 'react'
+
+export default function Lightbox({ mainImgIndex, setShowLightBox }) {
     const [index, setIndex] = useState(mainImgIndex)
 
     return (

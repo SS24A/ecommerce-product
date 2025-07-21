@@ -8,8 +8,8 @@ import HeaderMenu from './HeaderMenu'
 import HeaderCartAvatar from './HeaderCartAvatar'
 
 export default function Header({
-    cartItemQuantity,
     mainImgIndex,
+    cartItemQuantity,
     setCartItemQuantity,
 }) {
     const [showCart, setShowCart] = useState(false)

@@ -4,7 +4,7 @@ import plusIcon from '../assets/icon-plus.svg'
 import minusIcon from '../assets/icon-minus.svg'
 import cart from '../assets/icon-cart.svg'
 
-export default function ProductCart({ addToCart }) {
+export default function CartItems({ addToCart }) {
     const [itemQuantity, setitemQuantity] = useState(0)
     return (
         <>

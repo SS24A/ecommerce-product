@@ -17,36 +17,38 @@ export default function App() {
     }
 
     return (
-        <div className="container">
-            <header>
+        <>
+            <header className="header">
                 <Header
                     mainImgIndex={mainImgIndex}
                     cartItemQuantity={cartItemQuantity}
                     setCartItemQuantity={setCartItemQuantity}
                 />
             </header>
-            <main>
-                <div className="product">
-                    <ProductImages
-                        setShowLightBox={setIsLightBoxShown}
-                        mainImgIndex={mainImgIndex}
-                        setMainImgIndex={setMainImgIndex}
-                    />
-                    <section className="product-info">
-                        <ProductInfo />
-                        <CartItems addToCart={addToCart} />
-                    </section>
+            <main className="product-section">
+                <div className="container">
+                    <div className="product-section-inner">
+                        <ProductImages
+                            setIsLightBoxShown={setIsLightBoxShown}
+                            mainImgIndex={mainImgIndex}
+                            setMainImgIndex={setMainImgIndex}
+                        />
+                        <section className="product-info">
+                            <ProductInfo />
+                            <CartItems addToCart={addToCart} />
+                        </section>
+                    </div>
                 </div>
                 {isLightBoxShown && (
                     <div className="lightbox">
                         <ProductImages
                             mainImgIndex={mainImgIndex}
-                            setShowLightBox={setIsLightBoxShown}
+                            setIsLightBoxShown={setIsLightBoxShown}
                             isLightboxElement
                         />
                     </div>
                 )}
             </main>
-        </div>
+        </>
     )
 }

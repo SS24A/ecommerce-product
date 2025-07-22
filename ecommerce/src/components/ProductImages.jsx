@@ -9,7 +9,7 @@ import {
 import { useState } from 'react'
 
 export default function ProductImages({
-    setShowLightBox,
+    setIsLightBoxShown,
     mainImgIndex,
     setMainImgIndex,
     isLightboxElement,
@@ -26,14 +26,14 @@ export default function ProductImages({
                     alt="close-icon"
                     src={closeIcon}
                     className="close-icon"
-                    onClick={() => setShowLightBox(false)}
+                    onClick={() => setIsLightBoxShown(false)}
                 />
             )}
             <section className="product-images">
                 <div
                     className="product-main-img"
                     onClick={() => {
-                        if (!isLightboxElement) setShowLightBox(true)
+                        if (!isLightboxElement) setIsLightBoxShown(true)
                     }}
                 >
                     {isLightboxElement && (

@@ -3,40 +3,38 @@ import { useState } from 'react'
 import logo from '../assets/logo.svg'
 import menuIcon from '../assets/icon-menu.svg'
 
-import CartState from './CartState'
 import HeaderMenu from './HeaderMenu'
-import HeaderCartAvatar from './HeaderCartAvatar'
+import HeaderEnd from './HeaderEnd'
+import CartState from './CartState'
 
 export default function Header({
     mainImgIndex,
     cartItemQuantity,
     setCartItemQuantity,
 }) {
-    const [showCart, setShowCart] = useState(false)
+    const [isCartOpened, setIsCartOpened] = useState(false)
 
     return (
-        <>
-            <div className="header-container">
-                <span className="header-menu-icon">
-                    <img src={menuIcon} alt="menu" />
-                </span>
-                <span className="header-logo">
-                    <img src={logo} alt="logo" />
-                </span>
-                <HeaderMenu />
-                <HeaderCartAvatar
+        <div className="header container">
+            <span className="header-menu-icon">
+                <img src={menuIcon} alt="menu" />
+            </span>
+            <span className="header-logo">
+                <img src={logo} alt="logo" />
+            </span>
+            <HeaderMenu />
+            <HeaderEnd
+                cartItemQuantity={cartItemQuantity}
+                isCartOpened={isCartOpened}
+                setIsCartOpened={setIsCartOpened}
+            />
+            {isCartOpened && (
+                <CartState
+                    mainImgIndex={mainImgIndex}
                     cartItemQuantity={cartItemQuantity}
-                    setShowCart={setShowCart}
-                    showCart={showCart}
+                    setCartItemQuantity={setCartItemQuantity}
                 />
-                {showCart && (
-                    <CartState
-                        cartItemQuantity={cartItemQuantity}
-                        mainImgIndex={mainImgIndex}
-                        setCartItemQuantity={setCartItemQuantity}
-                    />
-                )}
-            </div>
-        </>
+            )}
+        </div>
     )
 }

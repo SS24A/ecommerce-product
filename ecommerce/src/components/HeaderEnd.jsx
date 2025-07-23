@@ -8,15 +8,18 @@ export default function HeaderEnd({
 }) {
     return (
         <span className="header-cart-avatar">
-            {cartItemQuantity !== 0 && (
-                <span className="cart-num-items">{cartItemQuantity}</span>
-            )}
-            <img
-                className="header-cart"
-                src={cart}
-                alt="cart"
-                onClick={() => setIsCartOpened(!isCartOpened)}
-            />
+            <span className="header-cart-wrapper">
+                {cartItemQuantity !== 0 && (
+                    <span className="cart-num-items">{cartItemQuantity}</span>
+                )}
+                <img
+                    className="header-cart"
+                    src={cart}
+                    alt="cart"
+                    onClick={() => setIsCartOpened(!isCartOpened)}
+                />
+            </span>
+
             <img className="header-avatar" src={avatar} alt="avatar" />
         </span>
     )

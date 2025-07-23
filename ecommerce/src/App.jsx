@@ -25,6 +25,7 @@ export default function App() {
                     setCartItemQuantity={setCartItemQuantity}
                 />
             </header>
+            <div className="header-main-border container"></div>
             <main className="product-section">
                 <div className="container">
                     <div className="product-section-inner">

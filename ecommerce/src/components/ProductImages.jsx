@@ -21,14 +21,6 @@ export default function ProductImages({
         : setMainImgIndex
     return (
         <>
-            {isLightboxElement && (
-                <img
-                    alt="close-icon"
-                    src={closeIcon}
-                    className="close-icon"
-                    onClick={() => setIsLightBoxShown(false)}
-                />
-            )}
             <section className="product-images">
                 <div
                     className="product-main-img"
@@ -36,31 +28,35 @@ export default function ProductImages({
                         if (!isLightboxElement) setIsLightBoxShown(true)
                     }}
                 >
-                    {isLightboxElement && (
-                        <span
-                            className="previous-icon"
-                            onClick={() =>
-                                setImgIndex(
-                                    (imgIndex - 1 + productMainImages.length) %
-                                        productMainImages.length
-                                )
-                            }
-                        >
-                            <img alt="previous" src={previousIcon} />
-                        </span>
-                    )}
+                    <span
+                        className="previous-icon"
+                        onClick={() =>
+                            setImgIndex(
+                                (imgIndex - 1 + productMainImages.length) %
+                                    productMainImages.length
+                            )
+                        }
+                    >
+                        <img alt="previous" src={previousIcon} />
+                    </span>
                     <img src={productMainImages[imgIndex]} alt="sneakers" />
+                    <span
+                        className="next-icon"
+                        onClick={() =>
+                            setImgIndex(
+                                (imgIndex + 1) % productMainImages.length
+                            )
+                        }
+                    >
+                        <img alt="next" src={nextIcon} />
+                    </span>
                     {isLightboxElement && (
-                        <span
-                            className="next-icon"
-                            onClick={() =>
-                                setImgIndex(
-                                    (imgIndex + 1) % productMainImages.length
-                                )
-                            }
-                        >
-                            <img alt="next" src={nextIcon} />
-                        </span>
+                        <img
+                            alt="close-icon"
+                            src={closeIcon}
+                            className="close-icon"
+                            onClick={() => setIsLightBoxShown(false)}
+                        />
                     )}
                 </div>
 

@@ -13,16 +13,23 @@ export default function Header({
     setCartItemQuantity,
 }) {
     const [isCartOpened, setIsCartOpened] = useState(false)
+    const [isMenuDropdownVisible, setIsMenuDropdownVisible] = useState(false)
 
     return (
         <div className="header container">
-            <span className="header-menu-icon">
+            <span
+                className="header-menu-icon"
+                onClick={() => setIsMenuDropdownVisible(true)}
+            >
                 <img src={menuIcon} alt="menu" />
             </span>
             <span className="header-logo">
                 <img src={logo} alt="logo" />
             </span>
-            <HeaderMenu />
+            <HeaderMenu
+                isMenuDropdownVisible={isMenuDropdownVisible}
+                setIsMenuDropdownVisible={setIsMenuDropdownVisible}
+            />
             <HeaderEnd
                 cartItemQuantity={cartItemQuantity}
                 isCartOpened={isCartOpened}

@@ -17,7 +17,7 @@ export default function CartState({
                     <div className="cart-state-empty">Your cart is empty.</div>
                 )}
                 {cartItemQuantity > 0 && (
-                    <div>
+                    <div className="cart-basket-filled">
                         <div className="cart-state-info">
                             <span className="cart-state-img">
                                 <img

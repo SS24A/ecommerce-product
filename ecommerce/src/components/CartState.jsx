@@ -25,7 +25,9 @@ export default function CartState({
                             />
                         </span>
                         <span>
-                            <p>Fall Limited Edition Sneakers</p>
+                            <p className="cart-state-text">
+                                Fall Limited Edition Sneakers
+                            </p>
                             <p>
                                 <span>$125.00 x {cartItemQuantity}</span>
                                 <span className="total-price">

@@ -469,6 +469,7 @@ body {
 
 .lightbox .product-images img {
     object-fit: cover;
+    object-position: top;
 }
 
 .lightbox .product-main-img {

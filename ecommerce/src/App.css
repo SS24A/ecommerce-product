@@ -439,13 +439,16 @@ body {
     left: 0;
     top: 0;
     background-color: hsl(0, 0%, 0%, 75%);
-    padding-top: 80px;
+    padding-top: 6vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .close-icon {
     position: absolute;
     cursor: pointer;
-    top: -7%;
+    top: -5vh;
     right: 0;
     filter: brightness(3);
     width: 20px;
@@ -457,11 +460,15 @@ body {
 
 .lightbox .product-images {
     position: relative;
-    margin: auto;
     width: 37%;
     max-width: 545px;
-    max-height: 100%;
-    gap: 40px;
+    max-height: 90vh;
+    gap: 3vh;
+}
+
+
+.lightbox .product-images img {
+    object-fit: cover;
 }
 
 .lightbox .product-main-img {

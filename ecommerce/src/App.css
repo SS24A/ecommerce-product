@@ -439,7 +439,7 @@ body {
     left: 0;
     top: 0;
     background-color: hsl(0, 0%, 0%, 75%);
-    padding-top: 6vh;
+    padding-top: 3vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -461,9 +461,9 @@ body {
 .lightbox .product-images {
     position: relative;
     width: 37%;
-    max-width: 545px;
+    max-width: 542px;
     max-height: 90vh;
-    gap: 5vh;
+    gap: 30px;
 }
 
 
@@ -546,10 +546,6 @@ body {
 
     .cart-state {
         right: 5px;
-    }
-
-    .lightbox {
-        padding-top: 70px;
     }
 
     .lightbox .product-images {

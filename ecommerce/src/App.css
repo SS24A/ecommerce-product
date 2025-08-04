@@ -439,7 +439,7 @@ body {
     left: 0;
     top: 0;
     background-color: hsl(0, 0%, 0%, 75%);
-    padding-top: 3vh;
+    padding-top: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -448,7 +448,7 @@ body {
 .close-icon {
     position: absolute;
     cursor: pointer;
-    top: -5vh;
+    top: -30px;
     right: 0;
     filter: brightness(3);
     width: 20px;
@@ -463,7 +463,7 @@ body {
     width: 37%;
     max-width: 542px;
     max-height: 90vh;
-    gap: 30px;
+    gap: 25px;
 }
 
 
@@ -479,7 +479,7 @@ body {
 .lightbox .previous-icon,
 .lightbox .next-icon {
     position: absolute;
-    left: -5%;
+    left: -27px;
     top: 50%;
     height: 55px;
     width: 55px;
@@ -493,7 +493,8 @@ body {
 }
 
 .lightbox .next-icon {
-    left: 95%;
+    left:100%; 
+    transform: translateX(-50%);
 }
 
 .lightbox .previous-icon:hover img,
@@ -551,7 +552,15 @@ body {
 
     .lightbox .product-images {
         max-width: 450px;
+        gap:20px;
     }
+
+    .lightbox .product-thumbnails {
+        justify-content: space-evenly;
+        max-width: 90%;
+        margin: auto;
+        gap: 14px;
+}
 }
 
 @media (max-width: 991px) {
@@ -617,10 +626,6 @@ body {
 }
 
 @media (max-width: 767px) {
-    body {
-        border: 1px solid black
-    }
-
     .header {
         padding-top: 15px;
     }

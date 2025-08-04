@@ -625,12 +625,12 @@ body {
     }
 
     .lightbox {
-        padding-top: 30px;
+        padding-top: 25px;
     }
 
     .close-icon {
        width: 15px;
-       top:-25px;
+       top:-20px;
     }
 
     .lightbox .product-images {

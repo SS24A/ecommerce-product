@@ -635,7 +635,7 @@ body {
 
     .lightbox .product-images {
         max-width: 350px;
-        gap:15px;
+        gap:10px;
     }
 }
 

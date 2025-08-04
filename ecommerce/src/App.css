@@ -623,6 +623,11 @@ body {
         padding: 14px 36px;
         font-size: 14px;
     }
+
+     .lightbox .product-images {
+        max-width: 350px;
+        gap:15px;
+    }
 }
 
 @media (max-width: 767px) {

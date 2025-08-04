@@ -624,9 +624,18 @@ body {
         font-size: 14px;
     }
 
-     .lightbox .product-images {
-        max-width: 350px;
-        gap:15px;
+    .lightbox {
+        padding-top: 30px;
+    }
+
+    .close-icon {
+       width: 15px;
+       top:-20px;
+    }
+
+    .lightbox .product-images {
+        max-width: 300px;
+        gap:10px;
     }
 }
 

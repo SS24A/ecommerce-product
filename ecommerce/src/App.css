@@ -464,6 +464,7 @@ body {
     max-width: 542px;
     max-height: 90vh;
     gap: 25px;
+    flex: 0 1 100%;
 }
 
 
@@ -630,12 +631,12 @@ body {
 
     .close-icon {
        width: 15px;
-       top:-20px;
+       top:-25px;
     }
 
     .lightbox .product-images {
-        max-width: 300px;
-        gap:10px;
+        max-width: 400px;
+        gap:15px;
     }
 }
 

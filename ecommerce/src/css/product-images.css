@@ -1,0 +1,124 @@
+.product-images {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 0 1 43%;
+    max-width: 43%;
+}
+
+.product-main-img {
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+}
+
+.product-main-img img {
+    max-width: 100%;
+}
+
+.previous-icon,
+.next-icon {
+    display: none;
+}
+
+.product-thumbnails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.img-wrapper {
+    cursor: pointer;
+    flex: 0 1 21%;
+    max-width: 21%;
+    border-radius: 13px;
+    overflow: hidden;
+    display: flex;
+    border: 3px solid hsl(0, 0%, 100%);
+}
+
+.img-wrapper img {
+    max-width: 100%;
+}
+
+.selected-img {
+    border: 3px solid hsl(26, 100%, 55%);
+    background: hsl(223, 64%, 98%);
+}
+
+.selected-img img {
+    opacity: 0.3;
+}
+
+.img-wrapper:hover {
+    background: hsl(223, 64%, 98%);
+}
+
+.img-wrapper:hover img {
+    opacity: 0.6;
+}
+
+@media (max-width: 1170px) {
+    .product-images {
+        flex: 0 1 45%;
+        max-width: 45%;
+    }
+}
+
+@media (max-width: 767px) {
+    .product-images {
+        max-width: 100%;
+    }
+
+    .product-main-img {
+        border-radius: 0;
+        position: relative;
+        overflow: visible;
+        height: 400px;
+    }
+
+    .product-main-img img {
+        object-fit: cover;
+        object-position: top;
+    }
+
+    .previous-icon,
+    .next-icon {
+        position: absolute;
+        top: 50%;
+        background-color: hsl(0, 0%, 100%);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        height: 40px;
+        width: 40px;
+        left: 4%;
+        transform: translateY(-50%);
+    }
+
+    .next-icon {
+        left: 85%
+    }
+
+    .previous-icon img,
+    .next-icon img {
+        transform: scale(1.0, 0.9) translate(-10%);
+        border-radius: 50%;
+    }
+
+    .next-icon img {
+        transform: scale(1.0, 0.9) translate(10%);
+    }
+
+    .product-thumbnails {
+        display: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .product-main-img {
+        height: 300px;
+    }
+}

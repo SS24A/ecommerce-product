@@ -1,6 +1,7 @@
 import { useState } from 'react'
 
-import './App.css'
+import './css/index.css'
+import './css/lightbox.css'
 
 import Header from './components/Header'
 import ProductImages from './components/ProductImages'

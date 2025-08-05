@@ -1,3 +1,5 @@
+import '../css/product-info.css'
+
 export default function ProductInfo() {
     return (
         <>

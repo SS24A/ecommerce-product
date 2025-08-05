@@ -7,6 +7,9 @@ import HeaderMenu from './HeaderMenu'
 import HeaderEnd from './HeaderEnd'
 import CartState from './CartState'
 
+import '../css/header.css'
+import '../css/cart-state.css'
+
 export default function Header({
     mainImgIndex,
     cartItemQuantity,

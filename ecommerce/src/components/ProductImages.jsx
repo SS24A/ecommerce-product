@@ -8,6 +8,8 @@ import {
 
 import { useState } from 'react'
 
+import '../css/product-images.css'
+
 export default function ProductImages({
     setIsLightBoxShown,
     mainImgIndex,

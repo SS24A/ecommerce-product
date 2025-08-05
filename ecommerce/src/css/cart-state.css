@@ -1,0 +1,169 @@
+.cart-state {
+    position: absolute;
+    top: 75px;
+    right: -54px;
+    border-radius: 10px;
+    box-shadow: 1px 21px 30px 0px hsl(220deg 14% 75% / 61%);
+    padding: 0 25px;
+    background-color: hsl(0, 0%, 100%);
+    width: 365px;
+    height: 262px;
+}
+
+.cart-state h3 {
+    font-size: 17px;
+    margin-bottom: 24px;
+    margin-top: 0;
+    color: hsl(220deg 13% 13% / 85%);
+    padding-top: 30px;
+    font-weight: 800;
+}
+
+.cart-state div:empty {
+    background-color: hsl(263deg 14% 75% / 33%);
+    height: 1px;
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-bottom: 25px;
+}
+
+.cart-state-filled {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-bottom: 30px;
+}
+
+.cart-state-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cart-state-img {
+    max-width: 50px;
+    border-radius: 5px;
+    display: flex;
+    overflow: hidden;
+}
+
+.cart-state-img img {
+    max-width: 100%;
+}
+
+.cart-state-content p {
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.6;
+    color: hsl(223deg 12.19% 60.36%);
+}
+
+.total-price {
+    margin-left: 7px;
+    font-weight: 800;
+    color: hsl(220, 13%, 13%);
+}
+
+.cart-state-delete {
+    display: flex;
+}
+
+.cart-state button {
+    justify-content: center;
+    padding: 0;
+    line-height: 3.4;
+    color: hsl(25, 100%, 94%);
+    background-color: hsl(26, 100%, 55%);
+    font-weight: 700;
+    border: none;
+    border-radius: 10px;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.cart-state-empty {
+    color: hsl(219deg 7.34% 56.32%);
+    font-weight: 800;
+    display: flex;
+    justify-content: center;
+    transform: translateY(55px);
+}
+
+@media (max-width: 1170px) {
+    .cart-state {
+        right: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .cart-state {
+        width: 94%;
+        z-index: 1;
+        top: 40px;
+        height: 256px;
+        box-shadow: 1px 7px 20px -2px hsl(0deg 0.69% 61.31% / 94%);
+        max-width: 350px;
+    }
+
+    .cart-state-content p:first-child {
+        visibility: hidden;
+        position: relative;
+    }
+
+    .cart-state-content p:first-child::before {
+        content: "Autumn Limited Edition...";
+        visibility: visible;
+        position: absolute;
+        top: 0;
+        left: 0;
+        font-weight: 500;
+    }
+
+    .cart-state-content p:nth-child(2) {
+        font-weight: 500;
+    }
+
+    .cart-state h3 {
+        padding-top: 24px;
+    }
+
+    .total-price {
+        font-size: 16px;
+        font-weight: 700;
+    }
+
+    .cart-state-delete {
+        width: 13px;
+    }
+
+    .cart-state-delete img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .cart-state {
+        top: 64px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media (max-width: 365px) {
+    .cart-state {
+        padding: 0 5%;
+    }
+
+    .cart-state-content {
+        justify-content: space-evenly;
+        gap: 10px;
+        font-size: 15px;
+    }
+
+    .cart-state-text {
+        max-width: 180px;
+        height: 24px;
+    }
+}

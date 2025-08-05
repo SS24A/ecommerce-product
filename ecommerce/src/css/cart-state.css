@@ -1,7 +1,7 @@
 .cart-state {
     position: absolute;
     top: 75px;
-    right: -54px;
+    right: 0px;
     border-radius: 10px;
     box-shadow: 1px 21px 30px 0px hsl(220deg 14% 75% / 61%);
     padding: 0 25px;

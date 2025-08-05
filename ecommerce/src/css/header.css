@@ -55,7 +55,7 @@
     cursor: pointer;
 }
 
-.header-cart:hover {
+.header-cart-wrapper:hover img{
     filter: brightness(0.5);
     position: relative;
     z-index: -1;
